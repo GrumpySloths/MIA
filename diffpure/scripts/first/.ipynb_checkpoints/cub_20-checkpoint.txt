@@ -1,0 +1,187 @@
+Logging to /tmp/openai-2023-01-08-11-07-18-556238
+creating model and diffusion...
+creating data loader...
+training...
+----------------------------
+| grad_norm     | 1.21e+03 |
+| lg_loss_scale | 20       |
+| loss          | 1.01     |
+| loss_q0       | 1.02     |
+| loss_q1       | 1.01     |
+| loss_q2       | 1.01     |
+| loss_q3       | 1.01     |
+| mse           | 1        |
+| mse_q0        | 1        |
+| mse_q1        | 1        |
+| mse_q2        | 1        |
+| mse_q3        | 1        |
+| param_norm    | 347      |
+| samples       | 256      |
+| step          | 0        |
+| vb            | 0.0129   |
+| vb_q0         | 0.0229   |
+| vb_q1         | 0.00743  |
+| vb_q2         | 0.00926  |
+| vb_q3         | 0.0129   |
+----------------------------
+saving model 0...
+saving model 0.9999...
+Found NaN, decreased lg_loss_scale to 19.001
+Found NaN, decreased lg_loss_scale to 18.001
+Found NaN, decreased lg_loss_scale to 17.004000000000005
+----------------------------
+| grad_norm     | 1.16e+03 |
+| lg_loss_scale | 17.9     |
+| loss          | 0.898    |
+| loss_q0       | 0.941    |
+| loss_q1       | 0.882    |
+| loss_q2       | 0.884    |
+| loss_q3       | 0.885    |
+| mse           | 0.881    |
+| mse_q0        | 0.9      |
+| mse_q1        | 0.875    |
+| mse_q2        | 0.876    |
+| mse_q3        | 0.874    |
+| param_norm    | 347      |
+| samples       | 2.82e+03 |
+| step          | 10       |
+| vb            | 0.0168   |
+| vb_q0         | 0.0416   |
+| vb_q1         | 0.00648  |
+| vb_q2         | 0.00822  |
+| vb_q3         | 0.0112   |
+----------------------------
+Found NaN, decreased lg_loss_scale to 16.01500000000002
+----------------------------
+| grad_norm     | 964      |
+| lg_loss_scale | 16.8     |
+| loss          | 0.57     |
+| loss_q0       | 0.636    |
+| loss_q1       | 0.546    |
+| loss_q2       | 0.547    |
+| loss_q3       | 0.551    |
+| mse           | 0.558    |
+| mse_q0        | 0.606    |
+| mse_q1        | 0.542    |
+| mse_q2        | 0.542    |
+| mse_q3        | 0.544    |
+| param_norm    | 347      |
+| samples       | 5.38e+03 |
+| step          | 20       |
+| vb            | 0.0115   |
+| vb_q0         | 0.03     |
+| vb_q1         | 0.00401  |
+| vb_q2         | 0.0051   |
+| vb_q3         | 0.007    |
+----------------------------
+----------------------------
+| grad_norm     | 697      |
+| lg_loss_scale | 16       |
+| loss          | 0.32     |
+| loss_q0       | 0.411    |
+| loss_q1       | 0.292    |
+| loss_q2       | 0.289    |
+| loss_q3       | 0.289    |
+| mse           | 0.309    |
+| mse_q0        | 0.375    |
+| mse_q1        | 0.29     |
+| mse_q2        | 0.286    |
+| mse_q3        | 0.285    |
+| param_norm    | 347      |
+| samples       | 7.94e+03 |
+| step          | 30       |
+| vb            | 0.0111   |
+| vb_q0         | 0.0365   |
+| vb_q1         | 0.00215  |
+| vb_q2         | 0.00267  |
+| vb_q3         | 0.00369  |
+----------------------------
+Found NaN, decreased lg_loss_scale to 15.03300000000004
+----------------------------
+| grad_norm     | 450      |
+| lg_loss_scale | 15.7     |
+| loss          | 0.146    |
+| loss_q0       | 0.22     |
+| loss_q1       | 0.125    |
+| loss_q2       | 0.118    |
+| loss_q3       | 0.119    |
+| mse           | 0.141    |
+| mse_q0        | 0.205    |
+| mse_q1        | 0.124    |
+| mse_q2        | 0.117    |
+| mse_q3        | 0.118    |
+| param_norm    | 347      |
+| samples       | 1.05e+04 |
+| step          | 40       |
+| vb            | 0.00463  |
+| vb_q0         | 0.0149   |
+| vb_q1         | 0.000921 |
+| vb_q2         | 0.00111  |
+| vb_q3         | 0.00152  |
+----------------------------
+----------------------------
+| grad_norm     | 251      |
+| lg_loss_scale | 15       |
+| loss          | 0.0747   |
+| loss_q0       | 0.173    |
+| loss_q1       | 0.0497   |
+| loss_q2       | 0.0392   |
+| loss_q3       | 0.0385   |
+| mse           | 0.0666   |
+| mse_q0        | 0.142    |
+| mse_q1        | 0.0493   |
+| mse_q2        | 0.0389   |
+| mse_q3        | 0.038    |
+| param_norm    | 347      |
+| samples       | 1.31e+04 |
+| step          | 50       |
+| vb            | 0.00809  |
+| vb_q0         | 0.0316   |
+| vb_q1         | 0.000367 |
+| vb_q2         | 0.000363 |
+| vb_q3         | 0.000486 |
+----------------------------
+----------------------------
+| grad_norm     | 117      |
+| lg_loss_scale | 15.1     |
+| loss          | 0.0399   |
+| loss_q0       | 0.112    |
+| loss_q1       | 0.0216   |
+| loss_q2       | 0.0123   |
+| loss_q3       | 0.0107   |
+| mse           | 0.037    |
+| mse_q0        | 0.101    |
+| mse_q1        | 0.0215   |
+| mse_q2        | 0.0122   |
+| mse_q3        | 0.0106   |
+| param_norm    | 347      |
+| samples       | 1.56e+04 |
+| step          | 60       |
+| vb            | 0.00291  |
+| vb_q0         | 0.0109   |
+| vb_q1         | 0.00016  |
+| vb_q2         | 0.000114 |
+| vb_q3         | 0.000136 |
+----------------------------
+----------------------------
+| grad_norm     | 57.8     |
+| lg_loss_scale | 15.1     |
+| loss          | 0.0339   |
+| loss_q0       | 0.109    |
+| loss_q1       | 0.0168   |
+| loss_q2       | 0.00727  |
+| loss_q3       | 0.00579  |
+| mse           | 0.0305   |
+| mse_q0        | 0.0951   |
+| mse_q1        | 0.0167   |
+| mse_q2        | 0.0072   |
+| mse_q3        | 0.00572  |
+| param_norm    | 347      |
+| samples       | 1.82e+04 |
+| step          | 70       |
+| vb            | 0.00344  |
+| vb_q0         | 0.014    |
+| vb_q1         | 0.000124 |
+| vb_q2         | 6.65e-05 |
+| vb_q3         | 7.38e-05 |
+----------------------------

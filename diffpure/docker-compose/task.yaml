@@ -1,0 +1,27 @@
+version: "3.6" 
+services:
+  jupyter_diffpure3:
+    build: ../
+    image: diffpure:0.2
+    ports:
+      - 8819:8819
+    volumes:
+      - ~/datasets:/datasets
+      - /home/fjxu/diffpure:/workspace
+      - /home/data:/data
+    command: python eval_sde_adv3.py --exp ./exp_results --config imagenet.yml \
+          -i imagenet-robust_adv-100-eps0.0157-4x4-bm0-t0-end1e-5-cont \
+          --t 100 \
+          --adv_eps 0.0157 \
+          --adv_batch_size 1 \
+          --num_sub 1 \
+          --domain imagenet \
+          --classifier_name imagenet-resnet50 \
+          --seed 10 \
+          --data_seed 12 \
+          --diffusion_type sde \
+          --attack_version standard 
+    runtime: nvidia
+        
+        
+        

@@ -1,0 +1,64 @@
+image: 0
+ngpus: 1, adv_batch_size: 1
+starting the model and loader...
+diffusion_type: sde
+model_config: {'image_size': 256, 'num_channels': 256, 'num_res_blocks': 2, 'num_heads': 4, 'num_heads_upsample': -1, 'num_head_channels': 64, 'attention_resolutions': '32,16,8', 'channel_mult': '', 'dropout': 0.0, 'class_cond': False, 'use_checkpoint': False, 'use_scale_shift_norm': True, 'resblock_updown': True, 'use_fp16': True, 'use_new_attention_order': False, 'learn_sigma': True, 'diffusion_steps': 1000, 'noise_schedule': 'linear', 'timestep_respacing': '1000', 'use_kl': False, 'predict_xstart': False, 'rescale_timesteps': True, 'rescale_learned_sigmas': False}
+t: 100, rand_t: False, t_delta: 15
+use_bm: False
+apply the attack to sde_adv [Linf]...
+/opt/conda/lib/python3.8/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='mean' instead.
+  warnings.warn(warning.format(ret))
+eval_sde_adv2.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x_t = torch.tensor(x_t).to(config.device).requires_grad_()
+Traceback (most recent call last):
+  File "eval_sde_adv2.py", line 266, in <module>
+    robustness_eval(args, config, batch, t)
+  File "eval_sde_adv2.py", line 166, in robustness_eval
+    eval_autoattack(args, config, model, img, y_val, adv_batch_size, log_dir)
+  File "eval_sde_adv2.py", line 116, in eval_autoattack
+    x_0, rets = model(x_t, x_start, None)  #获得逆扩散后的图片x_0
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 744, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "eval_sde_adv2.py", line 78, in forward
+    x_re, rets = self.runner.image_editing_sample((x - 0.5) * 2, x_start, e = noise, bs_id=counter, tag=self.tag)
+  File "/workspace/runners/diffpure_sde.py", line 253, in image_editing_sample
+    xs_ = torchsde.sdeint_adjoint(self.rev_vpsde, x_, ts, method='euler')
+  File "/opt/conda/lib/python3.8/site-packages/torchsde-0.2.5-py3.8.egg/torchsde/_core/adjoint.py", line 277, in sdeint_adjoint
+  File "/opt/conda/lib/python3.8/site-packages/torchsde-0.2.5-py3.8.egg/torchsde/_core/adjoint.py", line 53, in forward
+  File "/opt/conda/lib/python3.8/site-packages/torchsde-0.2.5-py3.8.egg/torchsde/_core/base_solver.py", line 149, in integrate
+  File "/opt/conda/lib/python3.8/site-packages/torchsde-0.2.5-py3.8.egg/torchsde/_core/methods/euler.py", line 34, in step
+  File "/opt/conda/lib/python3.8/site-packages/torchsde-0.2.5-py3.8.egg/torchsde/_core/base_sde.py", line 119, in f_and_g_prod_default2
+  File "/opt/conda/lib/python3.8/site-packages/torchsde-0.2.5-py3.8.egg/torchsde/_core/base_sde.py", line 92, in f_and_g_default
+  File "/workspace/runners/diffpure_sde.py", line 157, in f
+    drift = self.rvpsde_fn(1 - t, x, return_type='drift')
+  File "/workspace/runners/diffpure_sde.py", line 131, in rvpsde_fn
+    term = self.diffusion.attack_losses(self.x_start.cpu().detach(), model_output.cpu().detach(), disc_steps.cpu().detach())
+  File "/workspace/guided_diffusion/gaussian_diffusion.py", line 769, in attack_losses
+    terms["vb"] = self.attack_vb_terms_bpd(
+  File "/workspace/guided_diffusion/gaussian_diffusion.py", line 742, in attack_vb_terms_bpd
+    kl = normal_kl(
+  File "/workspace/guided_diffusion/losses.py", line 46, in normal_kl
+    + ((mean1 - mean2) ** 2) * th.exp(-logvar2)
+KeyboardInterrupt
+image: 0
+ngpus: 1, adv_batch_size: 1
+starting the model and loader...
+diffusion_type: sde
+model_config: {'image_size': 256, 'num_channels': 256, 'num_res_blocks': 2, 'num_heads': 4, 'num_heads_upsample': -1, 'num_head_channels': 64, 'attention_resolutions': '32,16,8', 'channel_mult': '', 'dropout': 0.0, 'class_cond': False, 'use_checkpoint': False, 'use_scale_shift_norm': True, 'resblock_updown': True, 'use_fp16': True, 'use_new_attention_order': False, 'learn_sigma': True, 'diffusion_steps': 1000, 'noise_schedule': 'linear', 'timestep_respacing': '1000', 'use_kl': False, 'predict_xstart': False, 'rescale_timesteps': True, 'rescale_learned_sigmas': False}
+t: 50, rand_t: False, t_delta: 15
+use_bm: False
+apply the attack to sde_adv [Linf]...
+/opt/conda/lib/python3.8/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='mean' instead.
+  warnings.warn(warning.format(ret))
+eval_sde_adv2.py:123: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  x_t = torch.tensor(x_t).to(config.device).requires_grad_()
+tensor([216.1940]) tensor([17.1576]) tensor([199.0365])
+tensor([7536.6772]) tensor([577.3329]) tensor([6959.3457]) tensor(0.0537, device='cuda:0', grad_fn=<MseLossBackward>)
+image: 1
+ngpus: 1, adv_batch_size: 1
+starting the model and loader...
+diffusion_type: sde
+model_config: {'image_size': 256, 'num_channels': 256, 'num_res_blocks': 2, 'num_heads': 4, 'num_heads_upsample': -1, 'num_head_channels': 64, 'attention_resolutions': '32,16,8', 'channel_mult': '', 'dropout': 0.0, 'class_cond': False, 'use_checkpoint': False, 'use_scale_shift_norm': True, 'resblock_updown': True, 'use_fp16': True, 'use_new_attention_order': False, 'learn_sigma': True, 'diffusion_steps': 1000, 'noise_schedule': 'linear', 'timestep_respacing': '1000', 'use_kl': False, 'predict_xstart': False, 'rescale_timesteps': True, 'rescale_learned_sigmas': False}
+t: 50, rand_t: False, t_delta: 15
+use_bm: False
+apply the attack to sde_adv [Linf]...

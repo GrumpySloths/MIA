@@ -1,0 +1,20 @@
+ngpus: 1, adv_batch_size: 1
+starting the model and loader...
+using imagenet resnet50...
+diffusion_type: sde
+Traceback (most recent call last):
+  File "eval_sde_adv.py", line 247, in <module>
+    robustness_eval(args, config)
+  File "eval_sde_adv.py", line 160, in robustness_eval
+    eval_autoattack(args, config, model, x_val, adv_batch_size, log_dir, img_idx)
+  File "eval_sde_adv.py", line 115, in eval_autoattack
+    x_0 = model(x_t, img_idx, it)  #获得逆扩散后的图片x_0
+  File "/opt/conda/lib/python3.8/site-packages/torch/nn/modules/module.py", line 744, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "eval_sde_adv.py", line 69, in forward
+    x_re = self.runner.image_editing_sample_o(x, img_idx=img_idx, it=it)
+  File "/workspace/runners/diffpure_sde.py", line 328, in image_editing_sample_o
+    img = PIL.Image.fromarray(sample, 'RGB').save(xt_path)
+  File "/opt/conda/lib/python3.8/site-packages/PIL/Image.py", line 2099, in save
+    fp = builtins.open(filename, "w+b")
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/images/cubs/train/0_xt_0.png'

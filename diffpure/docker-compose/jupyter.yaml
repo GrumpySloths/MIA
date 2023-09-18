@@ -1,0 +1,14 @@
+version: "3.6"
+services:
+  jupyter_diffpure:
+    build: ../
+    image: diffpure:0.2
+    shm_size: '128gb'
+    ports:
+      - 8819:8819
+    volumes:
+      - ~/datasets:/datasets
+      - /home/ubuntu/diffpure:/workspace
+      - /home/data:/data
+    command: jupyter lab --notebook-dir=/workspace --ip=0.0.0.0 --port=8819 --no-browser --allow-root
+    runtime: nvidia
